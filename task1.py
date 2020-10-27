@@ -37,7 +37,7 @@ class student:
         self.name = name
         self.studentNumber = studentNumber
         self.grade = grade
-        print(self.name + "'s student number is:" + self.studentNumber + ". \n" + self.name + " is now in grade" + str(self.grade))
+        print(self.name + "'s student number is:" + self.studentNumber + "\n" + self.name + " is now in grade" + str(self.grade))
     def getCourses(self,courses):
         self.courses = courses
         return self.courses
