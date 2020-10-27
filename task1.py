@@ -43,30 +43,34 @@ class student:
         return self.courses
 
     def showCourses(self):
-        print("This is a list of courses that the student takes.\n" + self.courses)
+        print("This is a list of courses that the student takes:")
+        for i in self.courses:
+            print(i)
 
     def getGrades(self,grades):
         self.grades = grades
         return self.grades
 
-    def showGrade(self,index):
-        print("The student's grade of " + self.courses[index] + " is:" + self.grades[index])
+    def showGrades(self,index):
+        print("The student's grade of " + self.courses[index] + " is:" + str(self.grades[index]))
 
     def average(self):
         a = 0
         for i in self.grades:
             a = a + i
-        average = a/int(self.grades.len())
-        print (self.name + "'s average grade is:" + average)
+        average = a/int(len(self.grades))
+        print (self.name + "'s average grade is:" + str(average))
         return average
 
     def getHonorRoll(self):
         self.grades.sort()
-        if self.grades.len() >= 5:
+        if len(self.grades) >= 5:
             x = (float(self.grades[-1]) + float(self.grades[-2]) + float(self.grades[-3]) + float(self.grades[-4]) + float(self.grades[-5]))/5
             if x >= 86:
+                print("The student is on the Honor Roll")
                 return True
             else:
+                print("The student is not on the Honor Roll")
                 return False
 
     def __del__(self):
@@ -80,6 +84,10 @@ def main():
     st1 = student("Anita Bath","91334",11)
     st1.getCourses( ["English","Math","PE","Computers","History","Biology","Japanese"] )
     st1.getGrades( [91, 94, 87, 99, 82, 100, 73])
+    st1.showCourses()
+    st1.showGrades(1)
+    st1.average()
+    st1.getHonorRoll()
 
     st2 = student("Joe Lunchbox","12346", 11)
     st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
